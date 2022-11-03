@@ -46,6 +46,7 @@ class  Car{
             this.speed=0;
         }
 
+        /*move follow 4 quarant unit circle, move left & right */
         if(this.controls.left){
             this.angle+=0.03;
         }
@@ -60,20 +61,23 @@ class  Car{
 
     draw(ctx){
         ctx.save();
+
+        /*translate to the point where rotation is centered at */
         ctx.translate(this.x,this.y);
-        this.rotate(-this.angle);
+        ctx.rotate(-this.angle);
 
-
+        /* did translation, no longer need to put this.x-this.width/2 and etc*/ 
         ctx.beginPath();
         ctx.rect(
-            this.x-this.width/2,
-            this.y-this.height/2,
+            -this.width/2,
+            -this.height/2,
             this.width,
             this.height
 
         );
 
         ctx.fill();
+
         ctx.restore();
     }
 }

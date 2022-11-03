@@ -46,15 +46,20 @@ class  Car{
             this.speed=0;
         }
 
-        /*move follow 4 quarant unit circle, move left & right */
-        if(this.controls.left){
-            this.angle+=0.03;
-        }
+        if (this.speed!=0){
+            
+            /*implement multiply by -1 if speed is not positive ,to flip left and right directions when reverse*/
+            const flip=this.speed>0?1:-1;
 
-        if(this.controls.right){
-            this.angle-=0.03;
-        }
+            /*move follow 4 quarant unit circle, move left & right */
+            if(this.controls.left){
+                this.angle+=0.03*flip;
+            }
 
+            if(this.controls.right){
+                this.angle-=0.03*flip;
+            }
+        }
         this.x-=Math.sin(this.angle)*this.speed;
         this.y-=Math.cos(this.angle)*this.speed;
                

@@ -15,7 +15,13 @@ class  Car{
 
 }
 
-    update(){
+update(){
+    this.#move();
+}
+
+
+
+    #move(){
         if(this.controls.forward){
             /*this.y-=2; jog*/
             this.speed+=this.acceleration;

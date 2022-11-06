@@ -5,9 +5,13 @@ canvas.width=200; /*200 pixels*/
 
 /*get drawing context or tools */
 const ctx = canvas.getContext("2d");
+
+/*control variables*/
+var car_init_lane=1;
+
 /*center, and put at width */
 const road= new Road (canvas.width/2,canvas.width*0.9);
-const car=new Car(road.getLaneCenter(3),100,30,50); /* 100x,100y,30 width ,50 height*/
+const car=new Car(road.getLaneCenter(car_init_lane),100,30,50); /* 100x,100y,30 width ,50 height*/
 car.draw(ctx);
 
 animate();

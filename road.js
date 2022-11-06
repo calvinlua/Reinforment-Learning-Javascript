@@ -18,7 +18,7 @@ class Road{
     /*Define the center of the lane as lane number varies*/
     getLaneCenter(laneIndex){
         const laneWidth=this.width/this.lanecount;
-        return this.left+laneWidth/2+laneIndex*laneWidth;
+        return this.left+laneWidth/2+Math.min()(laneIndex,this.lanecount-1)*laneWidth;
     }
 
 

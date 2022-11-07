@@ -14,19 +14,21 @@ class Controls{
 
     document.onkeydown=(event)=>{
         switch(event.key){
+
             /*use wasd to control */
-            case "w":
-                this.forward=true;
-                break;
-            case "s":
-                this.reverse=true;
-                break;
             case"a":
                 this.left=true;
                 break;
             case"d":
                 this.right=true;
                 break;
+            case "w":
+                this.forward=true;
+                break;
+            case "s":
+                this.reverse=true;
+                break;
+         
 
             /*use arrow keys to control */
             case "ArrowLeft":
@@ -51,6 +53,21 @@ class Controls{
     /*"function(event)" is same as "(event)=> ", you can use "this" after using the latter function, so that constructor knows*/ 
     document.onkeyup=(event)=>{
         switch(event.key){
+            /*use wasd to control */
+            case"a":
+                this.left=false;
+                break;
+            case"d":
+                this.right=false;
+                break;
+            case "w":
+                this.forward=false;
+                break;
+            case "s":
+                this.reverse=false;
+                break;
+
+            /*use arrow keys to control */    
             case "ArrowLeft":
                 this.left=false;
                 break;

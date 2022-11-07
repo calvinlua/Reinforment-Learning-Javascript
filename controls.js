@@ -11,8 +11,24 @@ class Controls{
 
 /* # means private metho,cant access outside the class*/ 
 #addKeyboardListeners(){
+
     document.onkeydown=(event)=>{
         switch(event.key){
+            /*use wasd to control */
+            case "w":
+                this.forward=true;
+                break;
+            case "s":
+                this.reverse=true;
+                break;
+            case"a":
+                this.left=true;
+                break;
+            case"d":
+                this.right=true;
+                break;
+
+            /*use arrow keys to control */
             case "ArrowLeft":
                 this.left=true;
                 break;

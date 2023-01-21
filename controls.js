@@ -7,14 +7,17 @@ class Controls{
     
         /*method inside control class*/ 
         this.#addKeyboardListeners();
+        this.enable_arrow=false;
+        this.enable_wasd=false;
     }
 
 /* # means private metho,cant access outside the class*/ 
 #addKeyboardListeners(){
 
     document.onkeydown=(event)=>{
-        switch(event.key){
-
+        
+            if(enable_wasd){
+                switch(event.key){
             /*use wasd to control */
             case"a":
                 this.left=true;
@@ -28,8 +31,11 @@ class Controls{
             case "s":
                 this.reverse=true;
                 break;
-         
+            }
+            }
 
+            if(enable_arrow){
+                switch(event.key){
             /*use arrow keys to control */
             case "ArrowLeft":
                 this.left=true;
@@ -43,8 +49,8 @@ class Controls{
             case "ArrowDown":
                 this.reverse=true;
                 break;
-
-        }
+            }
+            }
         /*for debugging purposes,output to console*/
         console.table(this);
 

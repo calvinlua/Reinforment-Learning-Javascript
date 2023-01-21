@@ -1,5 +1,6 @@
-class  Car{
+class  car2{
     constructor (x,y,width,height){
+    this.controls.enabe
     this.x=x;
     this.y=y;
     this.width=width;
@@ -11,8 +12,8 @@ class  Car{
     this.friction=0.05;
     this.angle=0;
 
-    this.controls=new Controls(enable_wasd=true);
-    
+    this.controls=new Controls(enable_arrow=true);
+
 }
 
 
